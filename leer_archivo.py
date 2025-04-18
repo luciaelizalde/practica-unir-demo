@@ -104,6 +104,20 @@ def generar_reporte(deudas, transacciones):
     print(totalGeneral)
     print("="*60)
     
+    totales_por_mes = defaultdict(float)
+
+    for (mes, cliente), total in deudas.items():
+        totales_por_mes[mes] += total
+
+    # Mostrar resultados ordenados por mes
+    print("="*60)
+    print(f"{'Mes':<15} {'Total por Mes':>20}")
+    print("="*60)
+    for mes, total in sorted(totales_por_mes.items()):
+        print(f"{mes:<15} ${total:>20,.2f}")
+    print("="*60)
+
+
     print("\nDETALLE DE TRANSACCIONES:")
     print("="*60)
     print(f"{'FECHA':<12} {'CLIENTE':<25} {'DEUDA':>12} {'CONCEPTO':<20}")
