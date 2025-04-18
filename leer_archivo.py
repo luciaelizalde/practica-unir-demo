@@ -3,6 +3,7 @@
 import csv
 from collections import defaultdict
 from datetime import datetime
+# oli q ace
 
 def procesar_csv_deudas(nombre_archivo):
     """
